@@ -1,0 +1,8 @@
+prefix=/home/alvaro/Documents/GitHub/FASE_V/install
+
+Name: fase_v
+Description: Description of fase_v
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

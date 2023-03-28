@@ -1,0 +1,2 @@
+fase_v
+-DCATKIN_DEVEL_PREFIX=/home/alvaro/Documents/GitHub/FASE_V/devel -DCMAKE_INSTALL_PREFIX=/home/alvaro/Documents/GitHub/FASE_V/install -G Unix Makefiles
