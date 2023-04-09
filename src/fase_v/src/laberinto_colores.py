@@ -13,7 +13,7 @@ from time import sleep
 colors = {"blue": np.array((69, 81, 44)),
           "white": np.array((116, 116, 116)),
           "yellow": np.array((31, 78, 102)),
-          "grey": np.array((73, 76, 86)),
+          "grey": np.array((72, 76, 86)),
           "red": np.array((3, 3, 84))}
 
 center_color = "black"
@@ -71,7 +71,6 @@ if __name__ == "__main__":
     # TWIST MESSAGE
     vel_msg = Twist()
 
-    
     # MOVES
     while True:
         # BASIC MOVE
@@ -79,29 +78,70 @@ if __name__ == "__main__":
         vel_msg.angular.z = 0.0
         
         if center_color == "yellow": # YELLOW
-            if front < 0.6: # TURN RIGHT IF CLOSE
+            if front < 0.7: # TURN RIGHT IF CLOSE
                 angular_iterations = 0
-                while angular_iterations < 1900:
+                while angular_iterations < 1950:
                     vel_msg.linear.x = 0.22
                     vel_msg.angular.z = -0.7
                     vel_publisher.publish(vel_msg)
                     angular_iterations += 1
                     r.sleep()
         if center_color == "blue": # BLUE
-            if front < 1.350:
+            if left_color == "yellow":
+                if front < 1.200:
+                    angular_iterations = 0
+                    while angular_iterations < 1950:
+                        vel_msg.linear.x = 0.22
+                        vel_msg.angular.z = -0.7
+                        vel_publisher.publish(vel_msg)
+                        angular_iterations += 1
+                        r.sleep()
+            else:
+                if front < 0.6:
+                    angular_iterations = 0
+                    while angular_iterations < 1950:
+                        vel_msg.linear.x = 0.22
+                        vel_msg.angular.z = 0.7
+                        vel_publisher.publish(vel_msg)
+                        angular_iterations += 1
+                        r.sleep()
+
+        if center_color == "white":
+            if left_color == "grey":
                 angular_iterations = 0
-                print("GIRO A LA DERECHA")
-                while angular_iterations < 1900:
+                while angular_iterations < 1950:
                     vel_msg.linear.x = 0.22
                     vel_msg.angular.z = -0.7
                     vel_publisher.publish(vel_msg)
                     angular_iterations += 1
                     r.sleep()
-                else:
-                    vel_msg.linear.x = 0.14
-                    vel_msg.angular.z = -0.3
-                    vel_publisher.publish(vel_msg)
-                    break
+                    
+            elif left_color == "white" and right_color == "white":
+                if front < 0.6:
+                    angular_iterations = 0
+                    while angular_iterations < 1950:
+                        vel_msg.linear.x = 0.22
+                        vel_msg.angular.z = 0.7
+                        vel_publisher.publish(vel_msg)
+                        angular_iterations += 1
+                        r.sleep()
+        
+        if center_color == "red":
+            if right_color == "yellow":
+                if front < 1:
+                    angular_iterations = 0
+                    while angular_iterations < 1950:
+                        vel_msg.linear.x = 0.22
+                        vel_msg.angular.z = 0.7
+                        vel_publisher.publish(vel_msg)
+                        angular_iterations += 1
+                        r.sleep()
+        
+        '''else:
+            vel_msg.linear.x = 0.14
+            vel_msg.angular.z = -0.3
+            vel_publisher.publish(vel_msg)
+            break'''
         
         vel_publisher.publish(vel_msg)
         r.sleep()
