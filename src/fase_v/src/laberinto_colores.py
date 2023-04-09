@@ -16,7 +16,9 @@ colors = {"blue": np.array((69, 81, 44)),
           "grey": np.array((73, 76, 86)),
           "red": np.array((3, 3, 84))}
 
-current_color = "black"
+center_color = "black"
+left_color = "black"
+right_color = "black"
 
 # MOVE CONTROL
 move_forward = True
@@ -34,7 +36,9 @@ def lidar_callback(data):
     
 def camera_callback(data):
     # GLOBAL VARIABLES
-    global current_color
+    global center_color
+    global left_color
+    global right_color
     
     # ROS IMAGE TO OPENCV
     bridge = CvBridge()
@@ -42,13 +46,23 @@ def camera_callback(data):
     
     # GET IMAGE DIMENSIONS
     height, width, _ = cv_image.shape
-    # AND THE CENTER PIXEL
+    
+    # GET THE CENTER, CENTER_LEFT AND CENTER_RIGHT PIXEL
     center_pixel = cv_image[int(height/2), int(width/2)]
+    center_left_pixel = cv_image[int(height/2), 0]
+    center_right_pixel = cv_image[int(height/2), int(width) - 1]
     
     # GET THE CURRENT COLOR
     for color, code in colors.items():
         if (colors[color] == center_pixel).all():
-            current_color = color
+            center_color = color
+        
+        if (colors[color] == center_left_pixel).all():
+            left_color = color
+            
+        if (colors[color] == center_right_pixel).all():
+            right_color = color
+            
 
 if __name__ == "__main__":
     # INIT NODE AND SUBSCRIBERS/PUBLISHER
@@ -61,8 +75,14 @@ if __name__ == "__main__":
     # TWIST MESSAGE
     vel_msg = Twist()
     
+    while True:
+        print(center_color)
+        print(left_color)
+        print(right_color)
+        print("\n\n")
+    
     # MOVES
-    while move_forward: # MOVE FORWARD
+    '''while move_forward: # MOVE FORWARD
         vel_msg.linear.x = 0.22
         vel_msg.angular.z = 0.0
         vel_publisher.publish(vel_msg)
@@ -71,6 +91,6 @@ if __name__ == "__main__":
     vel_msg.linear.x = 0.0
     vel_msg.angular.z = 0.0
     vel_publisher.publish(vel_msg)
-    
+    '''
     
     rospy.spin()
