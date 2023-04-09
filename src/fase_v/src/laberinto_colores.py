@@ -20,19 +20,15 @@ center_color = "black"
 left_color = "black"
 right_color = "black"
 
-# MOVE CONTROL
-move_forward = True
+# LIDAR DATA
+front = 3
 
 def lidar_callback(data):
     # GLOBAL VARIABLES
-    global move_forward
+    global front
     
     # LIDAR INFORMATION
     front = data.ranges[0]
-    
-    # STOP MOVING FORWARD
-    if front < 1:
-        move_forward = False
     
 def camera_callback(data):
     # GLOBAL VARIABLES
@@ -74,23 +70,34 @@ if __name__ == "__main__":
     
     # TWIST MESSAGE
     vel_msg = Twist()
-    
-    while True:
-        print(center_color)
-        print(left_color)
-        print(right_color)
-        print("\n\n")
+
     
     # MOVES
-    '''while move_forward: # MOVE FORWARD
+    while True:
+        # BASIC MOVE
         vel_msg.linear.x = 0.22
         vel_msg.angular.z = 0.0
+        
+        if center_color == "yellow": # YELLOW
+            if front < 0.7: # TURN RIGHT IF CLOSE
+                angular_iterations = 0
+                print("GIRO A LA DERECHA")
+                while angular_iterations < 1700:
+                    vel_msg.linear.x = 0.22
+                    vel_msg.angular.z = -0.7
+                    vel_publisher.publish(vel_msg)
+                    angular_iterations += 1
+                    r.sleep()
+                else:
+                    vel_msg.linear.x = 0.15
+                    vel_msg.angular.z = 0.3
+                    sleep(0.02)
+                    break
+        
         vel_publisher.publish(vel_msg)
         r.sleep()
-    
+
     vel_msg.linear.x = 0.0
     vel_msg.angular.z = 0.0
     vel_publisher.publish(vel_msg)
-    '''
-    
     rospy.spin()
