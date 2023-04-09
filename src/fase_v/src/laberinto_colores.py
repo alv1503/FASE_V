@@ -80,73 +80,71 @@ if __name__ == "__main__":
         if center_color == "yellow": # YELLOW
             if front < 0.7: # TURN RIGHT IF CLOSE
                 angular_iterations = 0
-                while angular_iterations < 1950:
-                    vel_msg.linear.x = 0.22
-                    vel_msg.angular.z = -0.7
-                    vel_publisher.publish(vel_msg)
-                    angular_iterations += 1
-                    r.sleep()
-        if center_color == "blue": # BLUE
-            if left_color == "yellow":
-                if front < 1.200:
-                    angular_iterations = 0
-                    while angular_iterations < 1950:
-                        vel_msg.linear.x = 0.22
-                        vel_msg.angular.z = -0.7
-                        vel_publisher.publish(vel_msg)
-                        angular_iterations += 1
-                        r.sleep()
-            else:
-                if front < 0.6:
-                    angular_iterations = 0
-                    while angular_iterations < 1950:
-                        vel_msg.linear.x = 0.22
-                        vel_msg.angular.z = 0.7
-                        vel_publisher.publish(vel_msg)
-                        angular_iterations += 1
-                        r.sleep()
-
-        if center_color == "white":
-            if left_color == "grey":
-                angular_iterations = 0
-                while angular_iterations < 1950:
+                while angular_iterations < 1800:
                     vel_msg.linear.x = 0.22
                     vel_msg.angular.z = -0.7
                     vel_publisher.publish(vel_msg)
                     angular_iterations += 1
                     r.sleep()
                     
-            elif left_color == "white" and right_color == "white":
-                if front < 0.6:
+        if center_color == "blue": # BLUE
+            if left_color == "yellow": # LEFT WALL IS YELLOW (SECOND TURN)
+                if front < 1.200:
                     angular_iterations = 0
-                    while angular_iterations < 1950:
+                    while angular_iterations < 1800:
+                        vel_msg.linear.x = 0.22
+                        vel_msg.angular.z = -0.7
+                        vel_publisher.publish(vel_msg)
+                        angular_iterations += 1
+                        r.sleep()
+                        
+            else: # ONLY FOCUS ON THE FRONT (6th TURN)
+                if front < 0.7:
+                    angular_iterations = 0
+                    while angular_iterations < 1800:
+                        vel_msg.linear.x = 0.22
+                        vel_msg.angular.z = 0.7
+                        vel_publisher.publish(vel_msg)
+                        angular_iterations += 1
+                        r.sleep()
+
+        if center_color == "white": # WHITE
+            if left_color == "grey": # LEFT WALL IS GREY (3rd TURN)
+                angular_iterations = 0
+                while angular_iterations < 1800:
+                    vel_msg.linear.x = 0.22
+                    vel_msg.angular.z = -0.7
+                    vel_publisher.publish(vel_msg)
+                    angular_iterations += 1
+                    r.sleep()
+                    
+            elif left_color == "white" and right_color == "white": # ALL YOU SEE IS WHITE (5th TURN)
+                if front < 0.7: 
+                    angular_iterations = 0
+                    while angular_iterations < 1800:
                         vel_msg.linear.x = 0.22
                         vel_msg.angular.z = 0.7
                         vel_publisher.publish(vel_msg)
                         angular_iterations += 1
                         r.sleep()
         
-        if center_color == "red":
-            if right_color == "yellow":
+        if center_color == "red": # RED
+            if right_color == "yellow": # RIGHT WALL IS YELLOW (4th TURN)
                 if front < 1:
                     angular_iterations = 0
-                    while angular_iterations < 1950:
+                    while angular_iterations < 1800:
                         vel_msg.linear.x = 0.22
                         vel_msg.angular.z = 0.7
                         vel_publisher.publish(vel_msg)
                         angular_iterations += 1
                         r.sleep()
-        
-        '''else:
-            vel_msg.linear.x = 0.14
-            vel_msg.angular.z = -0.3
-            vel_publisher.publish(vel_msg)
-            break'''
         
         vel_publisher.publish(vel_msg)
         r.sleep()
+        
+    rospy.spin()
 
     vel_msg.linear.x = 0.0
     vel_msg.angular.z = 0.0
     vel_publisher.publish(vel_msg)
-    rospy.spin()
+    
