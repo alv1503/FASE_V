@@ -79,19 +79,28 @@ if __name__ == "__main__":
         vel_msg.angular.z = 0.0
         
         if center_color == "yellow": # YELLOW
-            if front < 0.7: # TURN RIGHT IF CLOSE
+            if front < 0.6: # TURN RIGHT IF CLOSE
+                angular_iterations = 0
+                while angular_iterations < 1900:
+                    vel_msg.linear.x = 0.22
+                    vel_msg.angular.z = -0.7
+                    vel_publisher.publish(vel_msg)
+                    angular_iterations += 1
+                    r.sleep()
+        if center_color == "blue": # BLUE
+            if front < 1.350:
                 angular_iterations = 0
                 print("GIRO A LA DERECHA")
-                while angular_iterations < 1700:
+                while angular_iterations < 1900:
                     vel_msg.linear.x = 0.22
                     vel_msg.angular.z = -0.7
                     vel_publisher.publish(vel_msg)
                     angular_iterations += 1
                     r.sleep()
                 else:
-                    vel_msg.linear.x = 0.15
-                    vel_msg.angular.z = 0.3
-                    sleep(0.02)
+                    vel_msg.linear.x = 0.14
+                    vel_msg.angular.z = -0.3
+                    vel_publisher.publish(vel_msg)
                     break
         
         vel_publisher.publish(vel_msg)
