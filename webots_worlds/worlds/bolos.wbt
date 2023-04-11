@@ -1,0 +1,123 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/balls/protos/Ball.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/obstacles/protos/OilBarrel.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.4219475713693952 0.47408951685872175 0.7727867603809818 1.7115728307542286
+  position -0.6090303509719083 -0.9357597871810641 3.7510066385981755
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+  castShadows FALSE
+}
+RectangleArena {
+  floorSize 10 10
+}
+OilBarrel {
+  translation -0.74 1.51 0.11
+  height 0.2
+  radius 0.05
+}
+OilBarrel {
+  translation -0.37 1.59 0.11
+  name "oil barrel(1)"
+  height 0.2
+  radius 0.05
+}
+OilBarrel {
+  translation -0.37 1.46 0.11
+  name "oil barrel(2)"
+  height 0.2
+  radius 0.05
+}
+OilBarrel {
+  translation -0.49 1.51 0.11
+  name "oil barrel(3)"
+  height 0.2
+  radius 0.05
+}
+OilBarrel {
+  translation -0.62 1.45 0.11
+  name "oil barrel(4)"
+  height 0.2
+  radius 0.05
+}
+OilBarrel {
+  translation -0.26 1.51 0.11
+  name "oil barrel(5)"
+  height 0.2
+  radius 0.05
+}
+Floor {
+  translation 0 1.4 0.0001
+  size 2.4 1.35
+  appearance Parquetry {
+    type "light strip"
+    colorOverride 0.937255 0.160784 0.160784
+  }
+}
+OilBarrel {
+  translation -0.49 1.66 0.11
+  name "oil barrel(8)"
+  height 0.2
+  radius 0.05
+}
+OilBarrel {
+  translation -0.5 1.38 0.11
+  name "oil barrel(7)"
+  height 0.2
+  radius 0.05
+}
+OilBarrel {
+  translation -0.61 1.59 0.11
+  name "oil barrel(6)"
+  height 0.2
+  radius 0.05
+}
+Floor {
+  translation 0.2 1.4 0.001
+  name "strip"
+  size 0.01 1.35
+  appearance Parquetry {
+    type "light strip"
+    colorOverride 0.643137 0 0
+  }
+}
+Wall {
+  translation -2.16169e-06 2.12 0
+  rotation 0 0 1 -1.5707953071795862
+  name "top"
+  size 0.1 2.4 0.5
+}
+Wall {
+  translation -1.15 1.45 0
+  rotation 0 0 1 1.01503e-06
+  name "left"
+  size 0.1 1.22 0.5
+}
+Wall {
+  translation 0.52 1.01 0
+  rotation 0 0 1 1.01503e-06
+  name "middle"
+  size 0.1 0.35 0.5
+}
+Wall {
+  translation -0.310001 0.78 0
+  rotation 0 0 1 -1.5707953071795862
+  name "bottom"
+  size 0.1 1.78 0.5
+}
+Ball {
+  translation 0.88 0.9 0.0334125
+  rotation 0 1 0 0
+}

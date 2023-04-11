@@ -1,0 +1,90 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/pallet/protos/WoodenPallet.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5068248672917857 0.20749709808367336 0.8367039549216428 2.4894167422319313
+  position 2.866851509175872 -3.859294801021352 9.670603118531911
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+  castShadows FALSE
+}
+RectangleArena {
+  floorSize 10 10
+}
+WoodenPallet {
+  translation -2.2 -0.64 0
+  name "wooden pallet1"
+  size 0.4 0.2 0.14
+}
+WoodenPallet {
+  translation -1.56 0.86 0
+  rotation 0 0 1 -1.5707953071795862
+  name "wooden pallet4"
+  size 0.4 0.2 0.14
+}
+WoodenPallet {
+  translation -2.22 0 0
+  name "wooden pallet3"
+  size 0.4 0.2 0.14
+}
+WoodenPallet {
+  translation -2.21 0.57 0
+  name "wooden pallet2"
+  size 0.4 0.2 0.14
+}
+Floor {
+  translation 0.44 0.3 0
+  size 0.3 0.4
+  appearance Parquetry {
+    type "chequered"
+    colorOverride 0.937255 0.160784 0.160784
+  }
+}
+Wall {
+  translation 1.24 0.03 0
+  name "right"
+  size 0.1 2.3 1
+}
+Wall {
+  translation 0.43 -0.47 0
+  name "lower cut"
+  size 0.1 0.4 1
+}
+Wall {
+  translation 0.04 0.4 0
+  size 0.1 0.6 1
+}
+Wall {
+  translation -2.48 0.01 0
+  name "left"
+  size 0.1 2.3 1
+}
+Wall {
+  translation -0.82 -1.08 0
+  rotation 0 0 1 -1.5707953071795862
+  name "bottom"
+  size 0.1 3.2 1
+}
+Wall {
+  translation -0.61 1.12 0
+  rotation 0 0 1 -1.5707953071795862
+  name "top"
+  size 0.1 3.6 1
+}
+Wall {
+  translation 0.59 0.04 0
+  rotation 0 0 1 -1.5707953071795862
+  name "center cut"
+  size 0.1 1.2 1
+}
