@@ -7,7 +7,6 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/alvaro/Documents/GitHub/FASE_V/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH='/home/alvaro/Documents/GitHub/FASE_V/devel/lib:/opt/ros/noetic/lib:/opt/ros/noetic/lib/x86_64-linux-gnu'
+export PKG_CONFIG_PATH='/home/alvaro/Documents/GitHub/FASE_V/devel/lib/pkgconfig:/opt/ros/noetic/lib/pkgconfig:/opt/ros/noetic/lib/x86_64-linux-gnu/pkgconfig'
 export PWD='/home/alvaro/Documents/GitHub/FASE_V/build'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/alvaro/Documents/GitHub/FASE_V/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/alvaro/Documents/GitHub/FASE_V/src:$ROS_PACKAGE_PATH"

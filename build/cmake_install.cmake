@@ -132,6 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/alvaro/Documents/GitHub/FASE_V/build/gtest/cmake_install.cmake")
   include("/home/alvaro/Documents/GitHub/FASE_V/build/fase_v/cmake_install.cmake")
+  include("/home/alvaro/Documents/GitHub/FASE_V/build/webots_ros/cmake_install.cmake")
 
 endif()
 
