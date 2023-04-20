@@ -1,4 +1,4 @@
-prefix=/home/alvaro/Documents/GitHub/FASE_V/install
+prefix=/home/jairo/Documentos/GitHub/FASE_V/install
 
 Name: fase_v
 Description: Description of fase_v

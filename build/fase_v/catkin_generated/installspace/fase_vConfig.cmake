@@ -67,14 +67,14 @@ set(fase_v_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(fase_v_SOURCE_PREFIX /home/alvaro/Documents/GitHub/FASE_V/src/fase_v)
-  set(fase_v_DEVEL_PREFIX /home/alvaro/Documents/GitHub/FASE_V/devel)
+  set(fase_v_SOURCE_PREFIX /home/jairo/Documentos/GitHub/FASE_V/src/fase_v)
+  set(fase_v_DEVEL_PREFIX /home/jairo/Documentos/GitHub/FASE_V/devel)
   set(fase_v_INSTALL_PREFIX "")
   set(fase_v_PREFIX ${fase_v_DEVEL_PREFIX})
 else()
   set(fase_v_SOURCE_PREFIX "")
   set(fase_v_DEVEL_PREFIX "")
-  set(fase_v_INSTALL_PREFIX /home/alvaro/Documents/GitHub/FASE_V/install)
+  set(fase_v_INSTALL_PREFIX /home/jairo/Documentos/GitHub/FASE_V/install)
   set(fase_v_PREFIX ${fase_v_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/alvaro/Documents/GitHub/FASE_V/install/lib;/home/alvaro/Documents/GitHub/FASE_V/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/jairo/Documentos/GitHub/FASE_V/install/lib;/home/jairo/catkin_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -1,8 +1,8 @@
-# Install script for directory: /home/alvaro/Documents/GitHub/FASE_V/src/fase_v
+# Install script for directory: /home/jairo/Documentos/GitHub/FASE_V/src/fase_v
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/alvaro/Documents/GitHub/FASE_V/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jairo/Documentos/GitHub/FASE_V/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/alvaro/Documents/GitHub/FASE_V/build/fase_v/catkin_generated/installspace/fase_v.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jairo/Documentos/GitHub/FASE_V/build/fase_v/catkin_generated/installspace/fase_v.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/fase_v/cmake" TYPE FILE FILES
-    "/home/alvaro/Documents/GitHub/FASE_V/build/fase_v/catkin_generated/installspace/fase_vConfig.cmake"
-    "/home/alvaro/Documents/GitHub/FASE_V/build/fase_v/catkin_generated/installspace/fase_vConfig-version.cmake"
+    "/home/jairo/Documentos/GitHub/FASE_V/build/fase_v/catkin_generated/installspace/fase_vConfig.cmake"
+    "/home/jairo/Documentos/GitHub/FASE_V/build/fase_v/catkin_generated/installspace/fase_vConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/fase_v" TYPE FILE FILES "/home/alvaro/Documents/GitHub/FASE_V/src/fase_v/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/fase_v" TYPE FILE FILES "/home/jairo/Documentos/GitHub/FASE_V/src/fase_v/package.xml")
 endif()
 

@@ -1,2 +1,2 @@
-fase_v:webots_ros
--DCATKIN_DEVEL_PREFIX=/home/alvaro/Documents/GitHub/FASE_V/devel -DCMAKE_INSTALL_PREFIX=/home/alvaro/Documents/GitHub/FASE_V/install -G Unix Makefiles
+fase_v
+-DCATKIN_DEVEL_PREFIX=/home/jairo/Documentos/GitHub/FASE_V/devel -DCMAKE_INSTALL_PREFIX=/home/jairo/Documentos/GitHub/FASE_V/install -G Unix Makefiles

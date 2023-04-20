@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alvaro/Documents/GitHub/FASE_V/src
+CMAKE_SOURCE_DIR = /home/jairo/Documentos/GitHub/FASE_V/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alvaro/Documents/GitHub/FASE_V/build
+CMAKE_BINARY_DIR = /home/jairo/Documentos/GitHub/FASE_V/build
 
 # Utility rule file for download_extra_data.
 
@@ -67,6 +67,6 @@ CMakeFiles/download_extra_data.dir/clean:
 .PHONY : CMakeFiles/download_extra_data.dir/clean
 
 CMakeFiles/download_extra_data.dir/depend:
-	cd /home/alvaro/Documents/GitHub/FASE_V/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alvaro/Documents/GitHub/FASE_V/src /home/alvaro/Documents/GitHub/FASE_V/src /home/alvaro/Documents/GitHub/FASE_V/build /home/alvaro/Documents/GitHub/FASE_V/build /home/alvaro/Documents/GitHub/FASE_V/build/CMakeFiles/download_extra_data.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jairo/Documentos/GitHub/FASE_V/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jairo/Documentos/GitHub/FASE_V/src /home/jairo/Documentos/GitHub/FASE_V/src /home/jairo/Documentos/GitHub/FASE_V/build /home/jairo/Documentos/GitHub/FASE_V/build /home/jairo/Documentos/GitHub/FASE_V/build/CMakeFiles/download_extra_data.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/download_extra_data.dir/depend
 
